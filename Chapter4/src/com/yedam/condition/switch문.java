@@ -2,7 +2,7 @@ package com.yedam.condition;
 
 import java.util.Scanner;
 
-public class igent {
+public class switch문 {
 public static void main(String[] args) {
 	
 	// Math.random() -> 0 <= Math.random() < 1 ... 1 ~ 45 

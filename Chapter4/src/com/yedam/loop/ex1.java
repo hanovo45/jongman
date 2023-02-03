@@ -74,12 +74,12 @@ public class ex1 {
 		// 2 ~ 9단까지 출력하는 반복문
 		
 		// i = 2 ~ 9
-//		for(int i = 2; i <= 9; i++) {
+		for(int i = 2; i <= 9; i++) {
 //		// j = 1 ~ 9 
-//			for(int j = 1; j <= 9; j++) {
-//				System.out.println(i + " * " + j + " = " + (i * j));
-//			}
-//		}
+			for(int j = 1; j <= 9; j++) {
+				System.out.println(i + " * " + j + " = " + (i * j));
+			}
+		}
 		
 		// 구구단 단별로 나누기
 		// 줄수를 의미하는 for문
@@ -148,16 +148,16 @@ public class ex1 {
 //		 **** 4  1  4 
 //		***** 5  0  5
 		
-			for(int i=5; i>0; i--) {
-				for(int j=1; j<=5; j++) {
-					if(i>j) {
-						System.out.print(" ");
-					}else {
-						System.out.print("*");
-					}
-			}
-				System.out.println();
-		}
+//			for(int i=5; i>0; i--) {
+//				for(int j=1; j<=5; j++) {
+//					if(i>j) {
+//						System.out.print(" ");
+//					}else {
+//						System.out.print("*");
+//					}
+//			}
+//				System.out.println();
+//		}
 		
 				
 //		for(int i=1; i<=5; i++) {
