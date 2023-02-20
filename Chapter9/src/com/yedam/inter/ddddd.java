@@ -1,4 +1,4 @@
-package com.yedam.inter;
+dpackage com.yedam.inter;
 
 public class ddddd implements RemoteControl {
 
