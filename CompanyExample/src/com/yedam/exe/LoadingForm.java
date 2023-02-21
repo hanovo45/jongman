@@ -88,6 +88,32 @@ public class LoadingForm {
 	
 	private void employees() {
 		int employeesMenu = 0;
-	}
+		while(employeesMenu != 4) {
+			// 1. 부서관련 프로그램 - 모든 부서 조회, 한 부서 조회, 부서 삭제, 수정, 등록,  // join 
+			System.out.println("=====================================================");
+			System.out.println("1. 모든 사원 조회 2. 사원 조회 3. 등록 4. 종료");
+			System.out.println("=====================================================");
+			System.out.println("입력>");
+			
+			
+			
+			employeesMenu = Integer.parseInt(sc.nextLine());
+			
+			switch(employeesMenu) {
+			case 1:
+				
+				break;
+			case 2:
+				
+				break;
+			case 3:
+				
+				break;
+			case 4:
+				
+				break;
+			}
 
+		}
+	}		
 }
