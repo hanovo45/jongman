@@ -2,10 +2,17 @@ package com.yedam.Student;
 
 public class Student {
 	
+//	STD_ID    NOT NULL NUMBER       
+//	STD_NAME  NOT NULL VARCHAR2(15) 
+//	STD_MAJOR          VARCHAR2(30) 
+//	STD_POINT          NUMBER(2,1)  
+	
 	private int stdId;
 	private String stdName;
 	private String stdMajor;
 	private double stdPoint;
+	
+	// join
 	private double stdSum;
 	private double stdAvg;
 	
@@ -45,6 +52,13 @@ public class Student {
 	}
 	public void setStdAvg(double stdAvg) {
 		this.stdAvg = stdAvg;
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "Student [stdId=" + stdId + ", stdName=" + stdName + ", stdMajor=" + stdMajor + ", stdPoint=" + stdPoint
+				+ ", stdSum=" + stdSum + ", stdAvg=" + stdAvg + "]";
 	}
 	
 	
