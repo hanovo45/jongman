@@ -30,12 +30,11 @@ public class DepartmentsDAO extends DAO{
 	public List<Departments> getDepartmentsList(){
 		List<Departments> list = new ArrayList<>();
 		Departments depart = null;
-		
 		try {
 			conn();
 			String sql = "select * from dept";
-			stmt=conn.createStatement();
-			rs=stmt.executeQuery(sql);
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
 			
 			while(rs.next()) {
 				depart = new Departments();
@@ -47,26 +46,22 @@ public class DepartmentsDAO extends DAO{
 				list.add(depart);
 			}
 			
-			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
 			disconn();
 		}
-		
 		return list;
 	}
 	
-	// 단건 조회
-	public Departments getDepartment(int departmentKey) {
+	//단건 조회
+	public Departments getDepartment(int deparmentKey) {
 		Departments depart = null;
-		
-		
 		try {
 			conn();
 			String sql = "select * from dept where department_id = ?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, departmentKey);
+			pstmt.setInt(1, deparmentKey);
 			
 			rs = pstmt.executeQuery();
 			
@@ -77,7 +72,6 @@ public class DepartmentsDAO extends DAO{
 				depart.setLocationId(rs.getInt("location_id"));
 				depart.setManagerId(rs.getInt("manager_id"));
 			}
-			
 		}catch(Exception e) {
 			e.printStackTrace();
 			
@@ -85,14 +79,12 @@ public class DepartmentsDAO extends DAO{
 			disconn();
 		}
 		
-		return depart;
-		
+		return depart;		
 	}
 	
-	
-	// 삭제
+	//부서 삭제, 수정, 등록
+	//삭제
 	public int deleteDept(Departments d) {
-		
 		int result = 0;
 		try {
 			conn();
@@ -101,7 +93,7 @@ public class DepartmentsDAO extends DAO{
 			pstmt.setInt(1, d.getDepartmentId());
 			
 			result = pstmt.executeUpdate();
-			
+					
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -110,13 +102,12 @@ public class DepartmentsDAO extends DAO{
 		return result;
 	}
 	
-	// 수정
+	//수정
 	public int modifyDept(Departments dept) {
 		int result = 0;
-		
 		try {
 			conn();
-			String sql = "update set manager_id = ? where department_id = ?";
+			String sql = "update dept set manager_id = ? where department_id =?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, dept.getManagerId());
 			pstmt.setInt(2, dept.getDepartmentId());
@@ -130,13 +121,10 @@ public class DepartmentsDAO extends DAO{
 		}
 		return result;
 	}
-	
-	// 등록
+	//등록
 	public int insertDept(Departments dept) {
 		int result = 0;
-		
 		try {
-			
 			conn();
 			String sql = "insert into dept values (?,?,?,?)";
 			pstmt = conn.prepareStatement(sql);
@@ -147,7 +135,7 @@ public class DepartmentsDAO extends DAO{
 			
 			result = pstmt.executeUpdate();
 			
-		}catch(Exception e){
+		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
 			disconn();

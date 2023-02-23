@@ -1,67 +1,61 @@
 package com.yedam.employees;
 
+import java.sql.Date;
+
 public class Employees {
 	
 	// not null조건은 꼭 넣어야 함
 	
+//	EMPLOYEE_ID             NUMBER(6)    
+//	LAST_NAME      NOT NULL VARCHAR2(25) 
+//	EMAIL          NOT NULL VARCHAR2(25) 
+//	HIRE_DATE      NOT NULL DATE         
+//	JOB_ID         NOT NULL VARCHAR2(10) 
+	
 	private int employeeId;
 	private String lastName;
 	private String email;
+	//java.sql.Date vs java.util.Date 차이
+	//연월일             연월일시분초
+	//사용하는 방식이 서로 좀 ... 다릅니다.
 	private Date hireDate;
-	// java.sql.Date vs java.util.Date 차이
-	//   연 월 일 			원월일시분초
-	// 사용하시는 방식이 달라서 Date빨간줄
-	
-	private String jobId;
-
-	
+	private String jobID;
 	
 	public int getEmployeeId() {
 		return employeeId;
 	}
-
 	public void setEmployeeId(int employeeId) {
 		this.employeeId = employeeId;
 	}
-
 	public String getLastName() {
 		return lastName;
 	}
-
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-
 	public String getEmail() {
 		return email;
 	}
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
 	public Date getHireDate() {
 		return hireDate;
 	}
-
 	public void setHireDate(Date hireDate) {
 		this.hireDate = hireDate;
 	}
-
-	public String getJobId() {
-		return jobId;
+	public String getJobID() {
+		return jobID;
 	}
-
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
+	public void setJobID(String jobID) {
+		this.jobID = jobID;
 	}
-
-	// toString
-	// ??????????????
+	//toString
 	@Override
 	public String toString() {
-		
-//		return "Employees [employeeId =
+		return "Employees [사번=" + employeeId + ",\t이름=" + lastName + ",\t이메일=" + email + ",\t입사일="
+				+ hireDate + ",\t직책=" + jobID + "]";
 	}
 
 	
