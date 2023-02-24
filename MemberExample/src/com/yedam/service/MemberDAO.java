@@ -84,18 +84,16 @@ public class MemberDAO extends DAO{
 		int result = 0;
 		try {
 			conn();
-			String sql = "update member\r\n"
-					+ "set member_phone = ?\r\n"
-					+ "where member_id = ?";
-			
+			String sql = "UPDATE member\r\n"
+					+ "SET member_phone = ?\r\n"
+					+ "WHERE member_id = ?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, member.getMemberPhone());
 			pstmt.setString(2, member.getMemberId());
-			
+			//조회한 결과 - 코드에 녹여놓은 관리자 ID
 			result = pstmt.executeUpdate();
 			
-					
-		}catch(Exception e){
+		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
 			disconn();
@@ -108,13 +106,11 @@ public class MemberDAO extends DAO{
 	
 	public int deleteMember(String memId) {
 		int result = 0;
-		
 		try {
 			conn();
 			String sql = "delete from member where member_id = ?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, memId);
-			
 			result = pstmt.executeUpdate();
 			
 		}catch(Exception e) {

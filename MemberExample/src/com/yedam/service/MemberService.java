@@ -54,12 +54,10 @@ public class MemberService {
 	
 	// 3. 회원 정보 수정
 	public void modifyMember() {
-		
 		Member member = new Member();
 		System.out.println("연락처>");
 		member.setMemberPhone(sc.nextLine());
-		
-		System.out.println("회원ID");
+		System.out.println("회원ID>");
 		member.setMemberId(sc.nextLine());
 		
 		int result = MemberDAO.getInstance().modifyMember(member);
@@ -73,18 +71,15 @@ public class MemberService {
 	
 	// 4. 회원 정보 탈퇴
 	public void deleteMember() {
-		
-		System.out.println("회원 ID>");
+		System.out.println("회원ID>");
 		int result = MemberDAO.getInstance().deleteMember(sc.nextLine());
 		
-		// 자신의 id를 넣었다
-		// 로그인 되어있는 상태에서 회원탈퇴 -> 로그아웃
-		
-		
-		if(result > 0 ) {
-			MemberService.memberInfo = null;
+		//자신의 ID를 넣었다.
+		//로그인 되어 있는 상태에서 회원 탈퇴 -> 로그아웃.
+		if(result > 0) {
+			MemberService.memberInfo = null; //로그아웃
 			System.out.println("회원 ID 삭제 완료");
-		}else {
+		} else {
 			System.out.println("회원 ID 삭제 실패");
 		}
 	}

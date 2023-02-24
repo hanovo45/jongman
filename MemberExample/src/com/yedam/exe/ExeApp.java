@@ -55,11 +55,11 @@ public class ExeApp {
 			break;
 		case "2":
 			// 수정
-//			ms.modifyMember();
+			ms.modifyMember();
 			break;
 		case "3":
 			// 탈퇴
-//			ms.deleteMember();
+			ms.deleteMember();
 			break;
 		}
 	}

@@ -11,51 +11,60 @@ public class Exe {
 	
 	boolean run = true;
 	String menu = "";
-	
+	int selectNo = 0;
 	public Exe() {
 		run();
 	}
 	
 	private void run() {
 		
-		String menu = "";
-		
-		while(run) {
-			if(StudentService.studentInfo != null) {
+		while(selectNo != 3) {
+			
+			if(ss.studentInfo==null) {
+				Menu();
+			}else if(ss.studentInfo!=null) {
 				loginMenu();
-			}else if(StudentService.studentInfo == null) {
-				logoutMenu();
+			}
+			switch(selectNo) {
+			
+			case 1:
+				ss.signup();
+				break;
+			case 2:
+				ss.login();
+				break;
+			case 3:
+				System.out.println("end of porg");
+				break;
 			}
 		}
+		
 	}
+		
+		private void Menu() {
+			System.out.println("1.회원가입 2. 로그인 3.종료");
+			System.out.println("입력>");
+			
+			selectNo = Integer.parseInt(sc.nextLine());
+			
+		}
 	
 	private void loginMenu() {
 		System.out.println("1.조회 2.수정 3.탈퇴");
 		System.out.println("입력>");
-		menu = sc.nextLine();
+		String login = sc.nextLine();
 		
-		switch(menu) {
+		switch(login) {
 		case "1":
-			ss.getStudent();
+			ss.getStud();
 			break;
 		case "2":
+			ss.modifyStud();
 			break;
 		case "3":
 			break;
 		}
 	}
 	
-	private void logoutMenu() {
-		System.out.println("1.로그인 2. 종료");
-		System.out.println("입력>");
-		menu = sc.nextLine();
-		
-		if(menu.equals("1")) {
-			ss.login();
-		}else if(menu.equals("2")) {
-			run = false;
-			System.out.println("프로그램 종료");
-		}
-	}
 	
 }

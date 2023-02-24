@@ -66,6 +66,7 @@ public class DepartmentsService {
 				System.out.println("부서 등록 실패");
 			}
 		}
+		
 		// 수정
 		public void modifyDept() {
 			System.out.println("============부서 수정============");
@@ -86,6 +87,7 @@ public class DepartmentsService {
 				System.out.println("부서 수정 실패");
 			}
 		}
+		
 		// 삭제
 		public void deleteDept() {
 			System.out.println("============부서 삭제============");
