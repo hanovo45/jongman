@@ -17,6 +17,7 @@ public class Student {
 	private String studentEmail;
 	private String studentLecture;
 	private String studentLectTime;
+	private String studState;
 	
 	
 	
@@ -63,6 +64,12 @@ public class Student {
 		this.studentLectTime = studentLectTime;
 	}
 	
+	public String getStudState() {
+		return studState;
+	}
+	public void setStudState(String studState) {
+		this.studState = studState;
+	}
 	
 	@Override
 	public String toString() {
